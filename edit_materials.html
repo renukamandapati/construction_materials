@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Material</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2e6;
+            color: #003300;
+            margin: 40px;
+        }
+        h2 {
+            color: #006600;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 300px;
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit Material</h2>
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" value="{{ material.name }}" required><br>
+
+        <label>Category:</label><br>
+        <input type="text" name="category" value="{{ material.category }}" required><br>
+
+        <label>Price (₹):</label><br>
+        <input type="number" step="0.01" name="price" value="{{ material.price }}" required><br>
+
+        <label>Durability:</label><br>
+        <input type="number" step="0.1" name="durability" value="{{ material.durability }}" required><br>
+
+        <label>Supplier ID:</label><br>
+        <input type="number" name="supplier_id" value="{{ material.supplier_id }}" required><br>
+
+        <button type="submit">Update Material</button>
+        <a href="{{ url_for('routes.view_materials') }}"><button type="button">Back to Materials</button></a>
+    </form>
+</body>
+</html>

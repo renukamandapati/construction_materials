@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 style="color: #2a7b2a;">Recommended Materials</h2>
+
+    {% if materials %}
+        <div class="row">
+            {% for material in materials %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ material.name }}</h5>
+                        <p><strong>Price:</strong> ₹{{ material.price }}</p>
+                        <p><strong>Durability:</strong> {{ material.durability }}</p>
+                        <p><strong>Category:</strong> {{ material.category }}</p>
+                        <p><strong>Supplier ID:</strong> {{ material.supplier_id }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No materials match your preferences. Please adjust your preferences or add materials!</p>
+    {% endif %}
+</div>
+{% endblock %}

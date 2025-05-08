@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Construction Material Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* [STYLES OMITTED FOR BREVITY — KEEP YOUR ORIGINAL STYLES HERE] */
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        Construction Material Recommendation System
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="container mt-3">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- ✅ This is what was missing -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p><b>&copy; 2025 Mandapati Renuka's Project</b></p>
+    </footer>
+</body>
+</html>

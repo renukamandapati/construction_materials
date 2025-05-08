@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        Construction Material Recommendation System - Dashboard
+    </div>
+
+    <!-- Container for Dashboard Content -->
+    <div class="container">
+        
+        <!-- Flash Messages (Success, Error, etc.) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Welcome Message -->
+        <h2>Welcome, {{ username }} 👋</h2>
+        <p>Select an action below:</p>
+
+        <!-- Dashboard Action Buttons -->
+        <div class="dashboard-buttons">
+            <a href="{{ url_for('routes.view_materials') }}">
+                <button>📋 View Materials</button>
+            </a>
+
+            <a href="{{ url_for('routes.recommend_materials') }}">
+                <button>🔍 Get Recommendations</button>
+            </a>
+
+            <a href="{{ url_for('routes.logout') }}">
+                <button class="logout-btn">🚪 Logout</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

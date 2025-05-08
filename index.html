@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Material Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="navbar">Construction Material Recommendation System</div>
+
+    <div class="container">
+        <h2>Welcome to the Material Recommendation System</h2>
+        <p>Select the best materials for your construction projects with AI recommendations.</p>
+
+        <div style="margin-top: 30px;">
+            <a href="{{ url_for('routes.login') }}">
+                <button>Login</button>
+            </a>
+            <a href="{{ url_for('routes.register') }}">
+                <button>Register</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
