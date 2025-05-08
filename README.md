@@ -14,4 +14,4 @@ A Flask-based web application that helps users (core users) get material recomme
 ## 🚀 How to Run Locally
 
 1. **Clone the repository:**
-   https://github.com/renukamandapati/construction_material_recommendation_system
+   https://github.com/renukamandapati/construction_materials
